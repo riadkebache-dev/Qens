@@ -1,297 +1,142 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QENS — Concepts d'actifs prêts à l'emploi</title>
-    <style>
-        :root {
-            --bg-color: #F7F7F7;
-            --panel-bg: #FFFFFF;
-            --text-main: #111111;
-            --text-muted: #666666;
-            --border-color: #E0E0E0;
-            --accent-green: #4A5D4E;
-            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QENS — Light R&D</title>
+  <style>
+    :root {
+      --bg-color: #F7F7F7;
+      --text-main: #111111;
+      --text-muted: #444444;
+      --emerald: #097969;
+      --light-green: #5A7D6F;
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-stack);
-            -webkit-font-smoothing: antialiased;
-            line-height: 1.4;
-        }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-stack);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 24px 30px;
+      -webkit-font-smoothing: antialiased;
+      text-align: center;
+    }
 
-        /* HEADER */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 40px;
-            background: var(--panel-bg);
-            border-bottom: 1px solid var(--border-color);
-        }
+    /* Marque centrale */
+    .brand-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
 
-        .logo {
-            font-weight: 700;
-            font-size: 24px;
-            letter-spacing: 1px;
-        }
+    .brand-name {
+      font-size: clamp(4.5rem, 16vw, 11rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--emerald);
+      text-transform: uppercase;
+      line-height: 1;
+    }
 
-        nav a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin-left: 20px;
-            padding: 4px 8px;
-            border: 1px solid transparent;
-        }
+    /* Footer & Concept */
+    .concept-footer {
+      max-width: 650px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
 
-        nav a:hover {
-            border-color: var(--border-color);
-        }
+    .concept-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-        /* HERO SECTION */
-        .hero {
-            max-width: 900px;
-            margin: 60px auto 40px;
-            text-align: center;
-            padding: 0 20px;
-        }
+    .concept-title {
+      font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--light-green);
+      line-height: 1.3;
+    }
 
-        .hero h1 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: standard;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
+    .concept-desc {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      color: var(--text-muted);
+      line-height: 1.4;
+      font-weight: 500;
+    }
 
-        .hero p {
-            font-size: 16px;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-bottom: 28px;
-        }
+    .meta-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
 
-        .hero-ctas {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-        }
+    .email-link {
+      color: var(--text-main);
+      text-decoration: none;
+    }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 18px;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
+    .email-link:hover {
+      text-decoration: underline;
+    }
 
-        .btn-primary {
-            background-color: var(--text-main);
-            color: var(--panel-bg);
-            border: 1px solid var(--text-main);
-        }
+    .status-text {
+      color: var(--text-main);
+    }
 
-        .btn-primary:hover {
-            background-color: #333;
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-main);
-        }
-
-        /* CATALOG GRID */
-        .catalog {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
-
-        .card {
-            background: var(--panel-bg);
-            border: 1px solid var(--border-color);
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-image-wrapper {
-            width: 100%;
-            height: 240px;
-            overflow: hidden;
-            background-color: #EAEAEA;
-            margin-bottom: 16px;
-        }
-
-        .card-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-title {
-            font-size: 16px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-
-        .card-tags {
-            font-size: 10px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-        }
-
-        .card-pricing {
-            font-size: 11px;
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: auto;
-        }
-
-        .card-actions .btn {
-            flex: 1;
-            text-align: center;
-            padding: 8px 0;
-            font-size: 10px;
-        }
-
-        /* FOOTER */
-        footer {
-            border-top: 1px solid var(--border-color);
-            background: var(--panel-bg);
-            padding: 30px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 10px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 16px;
-            }
-            nav a {
-                margin: 0 8px;
-            }
-            .hero h1 {
-                font-size: 24px;
-            }
-            .card-actions {
-                flex-direction: column;
-            }
-        }
-    </style>
+    .copyright {
+      font-size: 0.75rem;
+      color: var(--text-main);
+      font-weight: 500;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">QENS</div>
-        <nav>
-            <a href="#catalogue">Explorer le catalogue</a>
-            <a href="#approche">Notre approche</a>
-            <a href="#compte">Compte</a>
-        </nav>
-    </header>
+  <!-- Nom du studio au centre -->
+  <main class="brand-container">
+    <h1 class="brand-name">QENS</h1>
+  </main>
 
-    <main>
-        <section class="hero">
-            <h1>CONCEPTS D'ACTIFS PRÊTS À L'EMPLOI. LIGHT R&D.</h1>
-            <p>Gagnez du temps, orientez votre vision, structurez vos objectifs.</p>
-            <div class="hero-ctas">
-                <a href="#catalogue" class="btn btn-primary">[ EXPLORER LE CATALOGUE ]</a>
-                <a href="#approche" class="btn btn-outline">[ COMMENT ÇA MARCHE ? ]</a>
-            </div>
-        </section>
+  <!-- Section bas de page -->
+  <footer class="concept-footer">
+    <div class="concept-header">
+      <h2 class="concept-title">CONCEPTS D’ACTIFS PRÊTS À L’EMPLOI. LIGHT R&D.</h2>
+      <p class="concept-desc">Gagnez du temps, orientez votre vision, structurez vos objectifs.</p>
+    </div>
 
-        <section class="catalog" id="catalogue">
-            
-            <!-- DROP 01: INOU -->
-            <article class="card">
-                <div class="card-image-wrapper">
-                    <img src="inou.jpg" alt="INOU Lifestyle Concept">
-                </div>
-                <h2 class="card-title">INOU / LIFESTYLE</h2>
-                <p class="card-tags">RETAIL, LIFESTYLE, GADGET, CULINARY</p>
-                <div class="card-pricing">PACK COMPLET 490 € | IMAGE HD 1 €</div>
-                <div class="card-actions">
-                    <a href="#" class="btn btn-primary">[ VOIR LE PACK ]</a>
-                    <a href="#" class="btn btn-outline">[ ACHETER IMAGE HD ]</a>
-                </div>
-            </article>
+    <div class="meta-info">
+      <p><a href="mailto:contact@qens.fr" class="email-link">contact@qens.fr</a></p>
+      <p class="status-text">Opening Soon / Disponible Prochainement (Q4 2026)</p>
+    </div>
 
-            <!-- DROP 02: EG01 -->
-            <article class="card">
-                <div class="card-image-wrapper">
-                    <img src="eg01.jpg" alt="EG01 Mobility Concept">
-                </div>
-                <h2 class="card-title">EG01 / MOBILITY</h2>
-                <p class="card-tags">MOBILITY, FUTURE, ELEC, URBAN</p>
-                <div class="card-pricing">MOBILITY CONCEPT 890 € | IMAGE HD 1 €</div>
-                <div class="card-actions">
-                    <a href="#" class="btn btn-primary">[ VOIR LE PACK ]</a>
-                    <a href="#" class="btn btn-outline">[ ACHETER IMAGE HD ]</a>
-                </div>
-            </article>
-
-            <!-- DROP 03: UNDR -->
-            <article class="card">
-                <div class="card-image-wrapper">
-                    <img src="undr.jpg" alt="UNDR Apparel Concept">
-                </div>
-                <h2 class="card-title">UNDR / APPAREL</h2>
-                <p class="card-tags">APPAREL, PACKAGING, BRAND</p>
-                <div class="card-pricing">BRANDBOOK & APPAREL 490 € | IMAGE HD 1 €</div>
-                <div class="card-actions">
-                    <a href="#" class="btn btn-primary">[ VOIR LE PACK ]</a>
-                    <a href="#" class="btn btn-outline">[ ACHETER IMAGE HD ]</a>
-                </div>
-            </article>
-
-        </section>
-    </main>
-
-    <footer>
-        <div>MENTIONS LÉGALES &mdash; DROITS D'AUTEUR &mdash; CESSION DE DROITS</div>
-        <div>FR : ARCHITECTURE DE VISION / LIGHT R&D ASSETS</div>
-    </footer>
+    <p class="copyright">
+      © 2026 QENS STUDIO PARIS FR.<br>
+      All Rights Reserved.
+    </p>
+  </footer>
 
 </body>
 </html>
