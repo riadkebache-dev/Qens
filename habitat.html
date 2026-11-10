@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QENS — Habitat</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #000000;
+            --muted-color: #555555;
+            --emerald: #00A86B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eeeeee;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--emerald);
+            letter-spacing: 2px;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .segment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .macro-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: background-color 0.2s ease;
+        }
+
+        .macro-card:hover {
+            background-color: #f9f9f9;
+        }
+
+        .macro-image-wrapper {
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #f0f0f0;
+        }
+
+        .macro-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .macro-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .macro-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .macro-desc {
+            font-size: 0.85rem;
+            color: var(--muted-color);
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .btn-tag {
+            align-self: flex-start;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px 15px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="app.html" class="logo">QENS</a>
+        <nav>
+            <a href="catalogue.html">Explorer le catalogue</a>
+            <a href="app.html#approche">Notre approche</a>
+            <a href="app.html#compte">Compte</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>[ HABITAT ]</h1>
+
+        <div class="segment-grid">
+            
+            <!-- BLOC INTÉRIEUR -->
+            <a href="habitat-interieur.html" class="macro-card">
+                <div class="macro-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80" alt="Architecture d'intérieur">
+                </div>
+                <div class="macro-content">
+                    <div>
+                        <div class="macro-title">Intérieur</div>
+                        <div class="macro-desc">Cuisine, Salle de bain, Salon, Dressing, Art de la table, Décoration, Néo-rétro.</div>
+                    </div>
+                    <div class="btn-tag">EXPLORER</div>
+                </div>
+            </a>
+
+            <!-- BLOC EXTÉRIEUR -->
+            <a href="habitat-exterieur.html" class="macro-card">
+                <div class="macro-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Architecture d'extérieur">
+                </div>
+                <div class="macro-content">
+                    <div>
+                        <div class="macro-title">Extérieur</div>
+                        <div class="macro-desc">Jardin, Terrasses, Pergolas, Piscines & aménagement paysager.</div>
+                    </div>
+                    <div class="btn-tag">EXPLORER</div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+</body>
+</html>
