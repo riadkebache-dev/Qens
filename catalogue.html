@@ -6,11 +6,13 @@
     <title>QENS — Catalogue</title>
     <style>
         :root {
-            --bg-color: #0A0A0A;
-            --card-bg: #121212;
-            --text-color: #EEEEEE;
-            --emerald: #00A86B;
-            --border-color: #222222;
+            --bg-color: #0b0f0e;
+            --surface-color: #121816;
+            --emerald: #00a86b;
+            --emerald-glow: rgba(0, 168, 107, 0.2);
+            --text-main: #f0f4f1;
+            --text-muted: #8a9a93;
+            --border-color: #1e2925;
         }
 
         * {
@@ -22,43 +24,47 @@
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--text-main);
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         header {
-            border-bottom: 2px solid var(--emerald);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: var(--emerald);
-            text-decoration: none;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         nav a {
-            color: var(--text-color);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
             text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--emerald);
         }
 
         h1 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             text-transform: uppercase;
             margin-bottom: 30px;
             letter-spacing: 1px;
-            border-left: 4px solid var(--emerald);
-            padding-left: 10px;
+            color: var(--text-main);
         }
 
         .catalog-grid {
@@ -68,11 +74,11 @@
         }
 
         .segment-card {
-            background-color: var(--card-bg);
+            background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             padding: 25px;
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--text-main);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -86,14 +92,15 @@
         }
 
         .segment-number {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--emerald);
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
         .segment-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 10px;
@@ -101,7 +108,7 @@
 
         .segment-desc {
             font-size: 0.8rem;
-            color: #888888;
+            color: var(--text-muted);
             line-height: 1.4;
         }
 
@@ -109,7 +116,7 @@
             align-self: flex-end;
             font-size: 0.75rem;
             color: var(--emerald);
-            margin-top: 15px;
+            margin-top: 20px;
             text-transform: uppercase;
         }
     </style>
@@ -117,21 +124,21 @@
 <body>
 
     <header>
-        <a href="app.html" class="logo">QENS</a>
+        <div class="logo">QENS</div>
         <nav>
             <a href="app.html">[ ACCUEIL ]</a>
         </nav>
     </header>
 
     <main>
-        <h1>EXPLORER LE CATALOGUE</h1>
+        <h1>[ EXPLORER LE CATALOGUE ]</h1>
 
         <div class="catalog-grid">
             
             <a href="retail.html" class="segment-card">
                 <div>
-                    <div class="segment-number">01 / SEGMENT</div>
-                    <div class="segment-title">RETAIL & E-COMMERCE</div>
+                    <div class="segment-number">01 / Segment</div>
+                    <div class="segment-title">Retail & E-commerce</div>
                     <div class="segment-desc">Concepts de sites, templates & directions artistiques par domaine.</div>
                 </div>
                 <div class="action-tag">[ ACCÉDER ]</div>
@@ -139,8 +146,8 @@
 
             <a href="mode.html" class="segment-card">
                 <div>
-                    <div class="segment-number">02 / SEGMENT</div>
-                    <div class="segment-title">MODE</div>
+                    <div class="segment-number">02 / Segment</div>
+                    <div class="segment-title">Mode</div>
                     <div class="segment-desc">Visuals textile, lookbooks & univers de marque.</div>
                 </div>
                 <div class="action-tag">[ ACCÉDER ]</div>
@@ -148,8 +155,8 @@
 
             <a href="habitat.html" class="segment-card">
                 <div>
-                    <div class="segment-number">03 / SEGMENT</div>
-                    <div class="segment-title">HABITAT</div>
+                    <div class="segment-number">03 / Segment</div>
+                    <div class="segment-title">Habitat</div>
                     <div class="segment-desc">Architecture d'intérieur & d'extérieur (Cuisine, Salon, Jardin, Piscine).</div>
                 </div>
                 <div class="action-tag">[ ACCÉDER ]</div>
@@ -157,8 +164,8 @@
 
             <a href="mobilite.html" class="segment-card">
                 <div>
-                    <div class="segment-number">04 / SEGMENT</div>
-                    <div class="segment-title">MOBILITÉ</div>
+                    <div class="segment-number">04 / Segment</div>
+                    <div class="segment-title">Mobilité</div>
                     <div class="segment-desc">Concepts de transport, micro-mobilité & design industriel automobile.</div>
                 </div>
                 <div class="action-tag">[ ACCÉDER ]</div>
@@ -166,8 +173,8 @@
 
             <a href="hightech.html" class="segment-card">
                 <div>
-                    <div class="segment-number">05 / SEGMENT</div>
-                    <div class="segment-title">GADGET & HIGH-TECH</div>
+                    <div class="segment-number">05 / Segment</div>
+                    <div class="segment-title">Gadget & High-Tech</div>
                     <div class="segment-desc">Objets connectés, hardware, accessoires & wearables.</div>
                 </div>
                 <div class="action-tag">[ ACCÉDER ]</div>
@@ -175,8 +182,8 @@
 
             <a href="industrie.html" class="segment-card">
                 <div>
-                    <div class="segment-number">06 / SEGMENT</div>
-                    <div class="segment-title">INDUSTRIEL & MÉCANIQUE</div>
+                    <div class="segment-number">06 / Segment</div>
+                    <div class="segment-title">Industriel & Mécanique</div>
                     <div class="segment-desc">Composants, pièces mécaniques, schémas techniques & machinerie.</div>
                 </div>
                 <div class="action-tag">[ ACCÉDER ]</div>
