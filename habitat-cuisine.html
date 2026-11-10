@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QENS — Habitat / Cuisine</title>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #000000;
+            --muted-color: #555555;
+            --emerald: #00A86B;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eeeeee;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--emerald);
+            letter-spacing: 2px;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .breadcrumb {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            color: var(--muted-color);
+        }
+
+        .breadcrumb a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .asset-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #f0f0f0;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .card-header-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-price {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--emerald);
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            color: var(--muted-color);
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .actions-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-buy {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-buy:hover {
+            background-color: var(--emerald);
+        }
+
+        .btn-adapt {
+            background-color: #ffffff;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            width: 100%;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        .btn-adapt:hover {
+            background-color: var(--emerald);
+            color: #ffffff;
+            border-color: var(--emerald);
+        }
+
+        .adapt-price {
+            font-weight: 400;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="app.html" class="logo">QENS</a>
+        <nav>
+            <a href="catalogue.html">Explorer le catalogue</a>
+            <a href="app.html#approche">Notre approche</a>
+            <a href="app.html#compte">Compte</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumb"><a href="habitat.html">HABITAT</a> / <a href="habitat-interieur.html">INTÉRIEUR</a> / CUISINE</div>
+        <h1>[ CUISINE ]</h1>
+
+        <div class="grid">
+            
+            <!-- ASSET 1 -->
+            <div class="asset-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Asset Cuisine 01">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-header-line">
+                            <div class="card-title">Îlot Monolithique</div>
+                            <div class="card-price">5,00 €</div>
+                        </div>
+                        <div class="card-desc">Concept 3D & direction artistique – Îlot central en pierre brute et bois sombre. Haute résolution.</div>
+                    </div>
+                    <div class="actions-group">
+                        <a href="#acheter-visuel" class="btn-buy">ACHETER LE VISUEL — 5,00 €</a>
+                        <a href="#adapter-cuisine" class="btn-adapt">ADAPTER À MA CUISINE <span class="adapt-price">(89,00 €)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ASSET 2 -->
+            <div class="asset-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80" alt="Asset Cuisine 02">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-header-line">
+                            <div class="card-title">Minimalisme Brut</div>
+                            <div class="card-price">5,00 €</div>
+                        </div>
+                        <div class="card-desc">Visuel conceptuel – Cuisine épurée sans poignées, finitions mates et éclairage linéaire encastré.</div>
+                    </div>
+                    <div class="actions-group">
+                        <a href="#acheter-visuel" class="btn-buy">ACHETER LE VISUEL — 5,00 €</a>
+                        <a href="#adapter-cuisine" class="btn-adapt">ADAPTER À MA CUISINE <span class="adapt-price">(89,00 €)</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ASSET 3 -->
+            <div class="asset-card">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Asset Cuisine 03">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <div class="card-header-line">
+                            <div class="card-title">Espace Linéaire</div>
+                            <div class="card-price">5,00 €</div>
+                        </div>
+                        <div class="card-desc">Scénographie architecturale – Mur d'armoires toute hauteur et plan de travail en marbre veiné.</div>
+                    </div>
+                    <div class="actions-group">
+                        <a href="#acheter-visuel" class="btn-buy">ACHETER LE VISUEL — 5,00 €</a>
+                        <a href="#adapter-cuisine" class="btn-adapt">ADAPTER À MA CUISINE <span class="adapt-price">(89,00 €)</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
