@@ -6,25 +6,23 @@
     <title>QENS — Catalogue</title>
     <style>
         :root {
-            --bg-color: #0b0f0e;
-            --surface-color: #121816;
-            --emerald: #00a86b;
-            --emerald-glow: rgba(0, 168, 107, 0.2);
-            --text-main: #f0f4f1;
-            --text-muted: #8a9a93;
-            --border-color: #1e2925;
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --border-color: #000000;
+            --muted-color: #555555;
+            --emerald: #00A86B;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-color);
             padding: 20px;
             max-width: 1200px;
             margin: 0 auto;
@@ -32,101 +30,113 @@
 
         header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #eeeeee;
             margin-bottom: 40px;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--emerald);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-color);
             letter-spacing: 2px;
-            text-transform: uppercase;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
-            color: var(--text-muted);
+            color: var(--text-color);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 700;
             text-transform: uppercase;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--emerald);
+            letter-spacing: 0.5px;
         }
 
         h1 {
             font-size: 1.4rem;
+            font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            text-align: center;
+            margin-bottom: 40px;
             letter-spacing: 1px;
-            color: var(--text-main);
         }
 
         .catalog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
         .segment-card {
-            background-color: var(--surface-color);
+            background-color: #ffffff;
             border: 1px solid var(--border-color);
             padding: 25px;
             text-decoration: none;
-            color: var(--text-main);
+            color: var(--text-color);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 180px;
-            transition: border-color 0.2s ease, transform 0.2s ease;
+            min-height: 200px;
+            transition: background-color 0.2s ease;
         }
 
         .segment-card:hover {
-            border-color: var(--emerald);
-            transform: translateY(-2px);
+            background-color: #f9f9f9;
         }
 
         .segment-number {
             font-size: 0.8rem;
+            font-weight: 800;
             color: var(--emerald);
-            font-weight: bold;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
         .segment-title {
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 800;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
 
         .segment-desc {
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            font-size: 0.85rem;
+            color: var(--muted-color);
             line-height: 1.4;
         }
 
-        .action-tag {
-            align-self: flex-end;
+        .btn-tag {
+            align-self: flex-start;
+            margin-top: 25px;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px 15px;
             font-size: 0.75rem;
-            color: var(--emerald);
-            margin-top: 20px;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">QENS</div>
+        <a href="app.html" class="logo">QENS</a>
         <nav>
-            <a href="app.html">[ ACCUEIL ]</a>
+            <a href="catalogue.html">Explorer le catalogue</a>
+            <a href="app.html#approche">Notre approche</a>
+            <a href="app.html#compte">Compte</a>
         </nav>
     </header>
 
@@ -137,56 +147,56 @@
             
             <a href="retail.html" class="segment-card">
                 <div>
-                    <div class="segment-number">01 / Segment</div>
+                    <div class="segment-number">01 / SEGMENT</div>
                     <div class="segment-title">Retail & E-commerce</div>
                     <div class="segment-desc">Concepts de sites, templates & directions artistiques par domaine.</div>
                 </div>
-                <div class="action-tag">[ ACCÉDER ]</div>
+                <div class="btn-tag">[ ACCÉDER ]</div>
             </a>
 
             <a href="mode.html" class="segment-card">
                 <div>
-                    <div class="segment-number">02 / Segment</div>
+                    <div class="segment-number">02 / SEGMENT</div>
                     <div class="segment-title">Mode</div>
                     <div class="segment-desc">Visuals textile, lookbooks & univers de marque.</div>
                 </div>
-                <div class="action-tag">[ ACCÉDER ]</div>
+                <div class="btn-tag">[ ACCÉDER ]</div>
             </a>
 
             <a href="habitat.html" class="segment-card">
                 <div>
-                    <div class="segment-number">03 / Segment</div>
+                    <div class="segment-number">03 / SEGMENT</div>
                     <div class="segment-title">Habitat</div>
                     <div class="segment-desc">Architecture d'intérieur & d'extérieur (Cuisine, Salon, Jardin, Piscine).</div>
                 </div>
-                <div class="action-tag">[ ACCÉDER ]</div>
+                <div class="btn-tag">[ ACCÉDER ]</div>
             </a>
 
             <a href="mobilite.html" class="segment-card">
                 <div>
-                    <div class="segment-number">04 / Segment</div>
+                    <div class="segment-number">04 / SEGMENT</div>
                     <div class="segment-title">Mobilité</div>
                     <div class="segment-desc">Concepts de transport, micro-mobilité & design industriel automobile.</div>
                 </div>
-                <div class="action-tag">[ ACCÉDER ]</div>
+                <div class="btn-tag">[ ACCÉDER ]</div>
             </a>
 
             <a href="hightech.html" class="segment-card">
                 <div>
-                    <div class="segment-number">05 / Segment</div>
+                    <div class="segment-number">05 / SEGMENT</div>
                     <div class="segment-title">Gadget & High-Tech</div>
                     <div class="segment-desc">Objets connectés, hardware, accessoires & wearables.</div>
                 </div>
-                <div class="action-tag">[ ACCÉDER ]</div>
+                <div class="btn-tag">[ ACCÉDER ]</div>
             </a>
 
             <a href="industrie.html" class="segment-card">
                 <div>
-                    <div class="segment-number">06 / Segment</div>
+                    <div class="segment-number">06 / SEGMENT</div>
                     <div class="segment-title">Industriel & Mécanique</div>
                     <div class="segment-desc">Composants, pièces mécaniques, schémas techniques & machinerie.</div>
                 </div>
-                <div class="action-tag">[ ACCÉDER ]</div>
+                <div class="btn-tag">[ ACCÉDER ]</div>
             </a>
 
         </div>
